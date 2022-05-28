@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  APIURL: 'https://investment-backend-api.herokuapp.com/'
 };

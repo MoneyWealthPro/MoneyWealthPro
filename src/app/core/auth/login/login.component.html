@@ -1,0 +1,54 @@
+<div class="about-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="heading-title">
+                        <h6><span></span></h6>
+                        <h2>Get your
+                            money working</h2>
+                        <p>MoneyPro is plastered cheeky loo what a plonker some dodgy chav a barney wellies, gutted mate quaint the little rotter pardon.</p>
+                    </div>
+                    <div class="media">
+                        <div class="images">
+                            <img src="assets/images/icon2.svg" alt="img">
+                        </div>
+                        <div class="media-body">
+                            <h3>Saving &amp; Investment</h3>
+                            <p>We are ipsum dolor sit amet, ctetursadipiscing elit dunt ut labore et doloremagna</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form class="mt-4" [formGroup]="loginForm">
+                    <div class="">
+                      <input type="email" formControlName="email" placeholder="Enter your email*">
+                    </div>
+                    <div class="">
+                        <input type="password" formControlName="password" placeholder="Enter password*">
+                    </div>
+                </form>
+                <div class="left-content">
+                    <a  class="theme-btn" (click)="login()">
+                       Log in
+                    </a>
+                </div>
+                <div class="mt-4 media-bod text-center">
+                    <p class="text-white">
+                       <small> You don't have an account already?</small><span class="login-link"><a [routerLink]="'/core/register'"> Register</a> </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="bottom-left">
+                    <span>Copyright &copy; <a href="#">MoneyWealthPro</a> 2022. All rights reserved</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

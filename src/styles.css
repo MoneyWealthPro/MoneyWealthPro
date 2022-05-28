@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(37, 63, 101, 0.3);
+}
+*::-webkit-scrollbar {
+  width: 7px;
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 1ex;
+  background: rgba(37, 63, 101, 0.3);
+}
+body {
+  background: rgb(231, 254, 248)
+}
+a {
+    cursor: pointer;
+}
