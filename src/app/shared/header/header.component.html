@@ -8,7 +8,6 @@
                         <div class="col-md-6">
                             <ul class="topbar-left">
                                 <li><a href="mailto:moneywealthpro@gmail.com"><span><i class="fa fa-envelope"></i></span> moneywealthpro@gmail.com</a></li>
-                                <!-- <li><a href="tel:+97657945737"><span class="phone"><i class="fa fa-phone"></i></span>+97657945737</a></li> -->
                             </ul>
                         </div>
                         <div class="col-md-6">
@@ -17,8 +16,18 @@
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li ><a href="#"><i class="fab fa-twitter"></i></a></li>
                                 <li ><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                <li><a [routerLink]="'/core/login'"><span><i class="fa fa-user"></i></span> Login </a></li>
-                                <li><a [routerLink]="'/core/register'"><span><i class="fa fa-user"></i></span> Get Started </a></li>
+                                <ng-container *ngIf="!user_data">
+                                    <li><a [routerLink]="'/core/login'"><span><i class="fa fa-user"></i></span> Login </a></li>
+                                    <li><a [routerLink]="'/core/register'"><span><i class="fa fa-user"></i></span> Get Started </a></li>
+                                </ng-container>
+                                <ng-container *ngIf="user_data">
+                                    <li>
+                                        <a [routerLink]="'/core/investor/dashboard'"><span><i class="fa fa-user"></i></span> Dashboard </a>
+                                    </li>
+                                    <li>
+                                        <a (click)="logout()"> Logout </a>
+                                    </li>
+                                </ng-container>
                             </ul>
                         </div>
                     </div>

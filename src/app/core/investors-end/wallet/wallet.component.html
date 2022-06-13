@@ -1,0 +1,131 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+      <h2> My Wallet</h2>
+        <p>
+            <a class="theme-btn" (click)="initiatePaymentMethod()">
+                + Quick Save
+            </a>
+        </p>
+    </div>
+    <div class="row mb-3 mt-3">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a class="inline-flex d-flex flex-col w-full md:w-1/2-2 border
+                        p-4 md:odd:mr-2 md:even:ml-2 mb-4" href="/settings/p/point">
+                        <span class="font-body text-sm text-gray-700">
+                          <strong> Pending Deposited Amount </strong> 
+                        </span>
+                        <span class="font-display text-xl font-semibold py-3">
+                            {{total_pending_deposited_amount | currency}}
+                        </span>
+                       </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="inline-flex d-flex flex-col w-full md:w-1/2-2 border
+                        p-4 md:odd:mr-2 md:even:ml-2 mb-4" href="/settings/p/point">
+                        <span class="font-body text-sm text-gray-700">
+                          <strong>Confirmed Deposited Amount </strong> 
+                        </span>
+                        <span class="font-display text-xl font-semibold py-3">
+                           {{total_deposited_amount | currency}}
+                        </span>
+                       </a>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="col-md-4">
+                <a class="inline-flex d-flex flex-col w-full md:w-1/2-2 border
+                        p-4 md:odd:mr-2 md:even:ml-2 mb-4" href="/settings/p/point">
+                        <span class="font-body text-sm text-gray-700">
+                          <strong> Unconfirmed Deposited Amount </strong> 
+                        </span>
+                        <span class="font-display text-xl font-semibold py-3">
+                           {{total_unconfirmed_deposited_amount | currency}}
+                        </span>
+                </a>
+            </div>
+    </div>  
+    <div class="row">
+        <div class="col-md-12">
+                <div class="py-2">
+                  <div>
+                    <h2 class="">All deposited funds</h2>
+                  </div>
+                  <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                    <div
+                      class="inline-block min-w-full shadow-md  rounded-lg overflow-hidden"
+                    >
+                      <table class="min-w-full leading-normal ">
+                        <thead>
+                          <tr>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700 uppercase tracking-wider">
+                             Source
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700 uppercase tracking-wider">
+                              Amount
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700 uppercase tracking-wider">
+                              Date
+                            </th>
+                            <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700 uppercase tracking-wider">
+                              Status
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let item of deposits">
+                            <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <div class="flex">
+                                <div class="">
+                                  <p class="text-gray-900 whitespace-no-wrap">
+                                   {{item?.depositor_wallet_address}}
+                                  </p>
+                                </div>
+                              </div>
+                            </td>
+                            <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">${{item?.deposited_amount}}</p>
+                            </td>
+                            <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <p class="text-gray-900 whitespace-no-wrap">{{item?.created_at | date}}</p>
+                            </td>
+                            <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                              <span *ngIf="item?.deposit_status === 'confirmed'"
+                                class="relative inline-block px-3 py-1  text-green-900 leading-tight"
+                              >
+                                <span
+                                  aria-hidden
+                                  class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                ></span>
+                                <span class="relative">{{item?.deposit_status}}</span>
+                              </span>
+                              <span *ngIf="item?.deposit_status === 'pending'"
+                              class="relative inline-block px-3 py-1  text-red-900 leading-tight"
+                            >
+                              <span
+                                aria-hidden
+                                class="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+                              ></span>
+                              <span class="relative">{{item?.deposit_status}}</span>
+                            </span>
+                            <span *ngIf="item?.deposit_status === 'unconfirmed'"
+                            class="relative inline-block px-3 py-1  text-orange-900 leading-tight"
+                          >
+                            <span
+                              aria-hidden
+                              class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"
+                            ></span>
+                            <span class="relative">{{item?.deposit_status}}</span>
+                          </span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </div>
+</main>

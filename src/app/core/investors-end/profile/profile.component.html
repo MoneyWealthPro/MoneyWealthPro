@@ -1,1 +1,204 @@
-<p>profile works!</p>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-fle justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+      <h2 >My Account</h2>
+      <p>{{user_data?.name}}</p>
+    </div>
+    <!-- Section for profile settings start -->
+    <div class="row mb-3">
+        <div class="col-md-8 text-center">
+            <!-- Section to show brief details start -->
+            <section class="mb-8 md:mb-12 flex flex-col pt-4 md:pt-0">
+                <div class="relative">
+                    <img src="https://storage.googleapis.com/piggybankservice.appspot.com/statics/default_avatar_v4.png" alt="User Avatar" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <label for="profileImage" class="w-32 h-32 rounded-full absolute flex justify-center items-end overflow-hidden cursor-pointer transition-opacity opacity-0 hover:opacity-100" style="top: 0px; left: calc(50% - 4rem);">
+                        <div class="w-full bg-black opacity-50 text-white flex justify-center py-2">
+                            <div class="" style="width: 24px; height: 24px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                    </label>
+                    <input type="file" id="profileImage" name="profileImage" class="hidden" accept="image/*">
+                </div>
+                <h2 class="font-display w-full text-center font-bold text-2xl mb-4 px-0 md:px-8">
+                   {{user_data?.name}}
+               </h2>
+            </section>
+            <div class="row">
+                    <div class="col-md-6">
+                        <a (click)="openModal('point')" class=" inline-flex flex-col w-full md:w-1/2-2 rounded-t rounded-br border
+                        p-4 md:odd:mr-2 md:even:ml-2 mb-4" >
+                        <span class="font-display text-xl font-semibold">7</span>
+                        <span class="font-body text-sm text-gray-700">Moneywealthpro Points</span>
+                       </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a (click)="openModal('referral')" class="inline-flex flex-col w-full md:w-1/2-2 rounded-t rounded-br 
+                        border p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+                        <span class="font-display text-xl font-semibold">
+                            #{{user_data?.username}}
+                        </span>
+                        <span class="font-body text-sm text-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25"
+                             height="25" viewBox="0 0 24 24" fill="none" 
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+                             stroke-linejoin="round" class="feather feather-share-2" 
+                             style="color: rgb(34, 34, 34); margin-right: 5px;">
+                             <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3">
+                             </circle><circle cx="18" cy="19" r="3"></circle>
+                             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                             <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                               Refer & Earn
+                        </span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-6">
+                        <a class="col-md-6 inline-flex flex-col w-full md:w-1/2-2 rounded-t rounded-br border 
+                        p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+                        <span class="font-display text-xl font-semibold">$1,000</span>
+                        <span class="font-body text-sm text-gray-700">Referral Earnings</span>
+                       </a>
+                    </div>
+                
+
+                    <div class="col-md-6">
+                        <div class="col-md-6 flex justify-between w-100 h-16 items-center px-4 md:px-8">
+                            <span class="font-display font-semibold">Show Dashboard Balances</span>
+                            <!-- <div style="position: relative; display: inline-block; text-align: left; opacity: 1; direction: ltr; border-radius: 14px; transition: opacity 0.25s ease 0s; touch-action: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); user-select: none;">
+                                <div class="react-switch-bg" style="height: 28px; width: 56px; margin: 0px; position: relative; background: rgb(136, 136, 136); border-radius: 14px; cursor: pointer; transition: background 0.25s ease 0s;"></div>
+                                <div class="react-switch-handle" style="height: 26px; width: 26px; background: rgb(255, 255, 255); display: inline-block; cursor: pointer; border-radius: 50%; position: absolute; transform: translateX(1px); top: 1px; outline: 0px; border: 0px; transition: background-color 0.25s ease 0s, transform 0.25s ease 0s, box-shadow 0.15s ease 0s;"></div>
+                                <input type="checkbox" role="switch" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;">
+                            </div> -->
+                           </div>
+                    </div>
+            </div>
+            <!-- Section to show brief details ends -->
+        </div>
+        <div class="col-md-4">
+            <!-- Profile settings sidebar start -->
+            <nav>
+             <a (click)="openModal('rate')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-percent" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <line x1="19" y1="5" x2="5" y2="19"></line>
+                         <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                         <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);" >Investment Interest Rates</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a (click)="openModal('account')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                         <circle cx="12" cy="7" r="4"></circle>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">
+                        My Account Settings
+                    </p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a (click)="openModal('story')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Tell a Story</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <!-- <a (click)="openModal('email')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                         <circle cx="8.5" cy="7" r="4"></circle>
+                         <polyline points="17 11 19 13 23 9"></polyline>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Verify your email</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a (click)="openModal('kyc')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-archive" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <polyline points="21 8 21 21 3 21 3 8"></polyline>
+                         <rect x="1" y="3" width="22" height="5"></rect>
+                         <line x1="10" y1="12" x2="14" y2="12"></line>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Update KYC</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a> -->
+             <a (click)="openModal('referral')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <circle cx="18" cy="5" r="3"></circle>
+                         <circle cx="6" cy="12" r="3"></circle>
+                         <circle cx="18" cy="19" r="3"></circle>
+                         <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                         <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Referral Earnings</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a (click)="openModal('withdraw')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <line x1="12" y1="1" x2="12" y2="23"></line>
+                         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body font-bold text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Withdraw Funds</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a (click)="openModal('contact')" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"  style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone" style="color: rgb(34, 34, 34); margin-right: 5px;">
+                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: rgb(66, 74, 87);">Contact Us</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+             <a class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4 w-full"  style="background-color: #fff; border-color: rgb(207, 219, 224); padding-top: 15px; padding-bottom: 15px;">
+                 <div class="mr-6" style="color: red; margin-right: 5px; width: 25px; height: 25px;">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out" style="color: red; margin-right: 5px;">
+                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                         <polyline points="16 17 21 12 16 7"></polyline>
+                         <line x1="21" y1="12" x2="9" y2="12"></line>
+                     </svg>
+                 </div>
+                 <div class="flex flex-col mr-2 w-full">
+                     <p class="font-body text-xs text-left text-gray-700 hover:text-black font-body whitespace-pre-wrap" style="color: red;">Log Out</p>
+                 </div>
+                 <div class="flex flex-col flex-1 self-start"></div>
+             </a>
+         </nav>
+            <!-- Profile settings sidebar ends -->
+         </div>
+    </div>
+    <!-- Section for profile settings ends -->
+</main>
+

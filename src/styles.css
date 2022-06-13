@@ -20,3 +20,9 @@ body {
 a {
     cursor: pointer;
 }
+.nav-link.disabled {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

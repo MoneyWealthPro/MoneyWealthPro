@@ -1,1 +1,120 @@
-<p>investment works!</p>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+      <h2 >Invest</h2>
+    </div>
+    <div class="row mb-3 mt-3">
+            <div class="col-md-4">
+                <a class=" inline-flex flex-col w-full md:w-1/2-2 border
+                    p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+                    <span class="font-body text-sm text-gray-700">Total Balance</span>
+                    <span class="font-display text-xl font-semibold py-3">
+                     <strong> {{total_investment_balance | currency}} </strong>
+                    </span>
+                </a>
+            </div>
+    </div>
+    <div class="row mt-3">
+                <div class="col-md-4" *ngFor="let item of investmets">
+                    <div class="investment-box" (click)="investModal(item)">
+                        <p class="
+                        font-body 
+                        font-display 
+                        font-semibold
+                         text-lg 
+                         lg:text-xl 
+                         mb-3
+                          whitespace-pre-wrap"
+                         style="">
+                            {{item?.title}}
+                        </p> 
+                        <p class="font-body text-xs  lg:text-sm text-gray-700 mb-4 whitespace-pre-wrap">
+                            {{item?.description}}
+                        </p>
+                        <p class="font-body text-xs  lg:text-sm text-gray-700 mb-4 whitespace-pre-wrap">
+                          Investment Risk :
+                           <strong class="risk"> {{item?.risk_level | titlecase}}</strong>
+                        </p>
+                    </div>
+                </div>
+    </div>  
+    <div class="row mt-3">
+        <div class="col-md-12">
+               <div>
+                <h2 class="">My investments</h2>
+               </div>
+               <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+                    <div
+                    class="inline-block min-w-full shadow-md  rounded-lg overflow-hidden"
+                    >
+                    <table class="min-w-full leading-normal ">
+                        <thead>
+                            <tr>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700  tracking-wider">
+                                Investment package
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700  tracking-wider">
+                                Amount invested
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700  tracking-wider">
+                                RIO Date
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700  tracking-wider">
+                                Investment rate
+                                </th>
+                                <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs  text-gray-700  tracking-wider">
+                                Investment status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of investmeted_packages">
+                                <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                                <div class="flex">
+                                    <div class="">
+                                        <p class="text-gray-900 whitespace-no-wrap">
+                                        {{item?.selected_package?.title}}
+                                        </p>
+                                    </div>
+                                </div>
+                                </td>
+                                <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">{{item?.amount | currency}}</p>
+                                </td>
+                                <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                                <p class="text-gray-900 whitespace-no-wrap">{{item?.roi_date | date}}</p>
+                                </td>
+                                <td class="px-5 py-2 border-b bg-white border-gray-200 text-sm">
+                                    <p class="text-gray-900 whitespace-no-wrap">
+                                        {{item?.selected_package?.interest_rate}}%
+                                    </p>
+                                </td>
+                                <td *ngIf="item?.investment_status == 'complete'" class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                                <span
+                                    class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
+                                >
+                                    <span
+                                    aria-hidden
+                                    class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                    ></span>
+                                    <span class="relative">{{item?.investment_status}}</span>
+                                </span>
+                                </td>
+                                <td *ngIf="item?.investment_status == 'ongoing'" class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
+                                    <span
+                                        class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight"
+                                    >
+                                        <span
+                                        aria-hidden
+                                        class="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+                                        ></span>
+                                        <span class="relative">{{item?.investment_status}}</span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+               </div>
+        </div>
+    </div>
+</main>

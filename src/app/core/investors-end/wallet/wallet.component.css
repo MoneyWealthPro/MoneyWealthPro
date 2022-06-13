@@ -1,0 +1,42 @@
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 54px;
+    font-family: "Playfair Display", serif;
+}
+p {
+    color: #718096;
+    font-family: Karla,sans-serif;
+}
+
+a {
+    background-color: #fff;
+}
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 54px;
+    font-family: "Playfair Display", serif;
+}
+.font-semibold{
+    font-size: 36px;
+}
+.theme-btn {
+    display: block;
+    max-width: 200px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FF9C1A;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+.theme-btn:hover, .theme-btn:focus {
+    background: #FF9C1A;
+    border: 1px solid #FF9C1A;
+    color: #fff;
+}

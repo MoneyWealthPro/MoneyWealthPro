@@ -1,3 +1,14 @@
 img {
     /* display: block !important; */
 }
+.theme_btn {
+    display: block;
+    max-width: 200px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px;
+}

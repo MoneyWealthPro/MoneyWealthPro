@@ -27,5 +27,11 @@ export class RegisterComponent implements OnInit {
   // Function to create 
   createAccount() {
     console.log(this.registerForm.value);
+    this.globalService.registerWithEmail(this.registerForm.value).subscribe((res: any) => {
+      console.log('success', res);
+      this.registerForm.reset();
+    },(err: any) => {
+      console.log('error', err);
+    })
   }
 }

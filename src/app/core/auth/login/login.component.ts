@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,22 @@ export class LoginComponent implements OnInit {
     })
   }
   login() {
-    console.log(this.loginForm);
+    this.globalService.loginWithEmail(this.loginForm.value).subscribe((res: any) => {
+      sessionStorage.setItem("user_token", res?.token);
+      this.loginForm.reset();
+      this.getUseDetails();
+    },(err: any) => {
+      console.log('error', err);
+    })
+  }
+  // Function to get the details of logged In User
+  getUseDetails() {
+    this.globalService.userDetails().subscribe((res: any) => {
+      localStorage.setItem('userdata', JSON.stringify(res?.data));
+      this.globalService.userData.next(JSON.stringify(res?.data));
+      this.router.navigate(['/core/investor/dashboard']);
+    }, (err: any) => {
+    })
   }
 
 }

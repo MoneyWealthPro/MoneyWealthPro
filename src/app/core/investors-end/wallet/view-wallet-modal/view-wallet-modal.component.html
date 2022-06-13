@@ -1,0 +1,39 @@
+<div class="modal-body">
+    <div class="text-center">
+        <h2>Pay to {{data?.name}} Wallet</h2>
+        <form [formGroup]="depositForm">
+            <div class="">
+                <input type="number" formControlName="deposited_amount"  placeholder="Enter amount*">
+            </div>
+            <div class="">
+                <input type="text" formControlName="depositor_wallet_address"  placeholder="Enter your wallet address*">
+            </div>
+            <div class="">
+                <textarea formControlName="depositor_message" placeholder="Drop a message"></textarea>
+            </div>
+            <div class="input_box wow">
+                    <div class="form-wraper">
+                        <input type="email" value="{{data?.address}}" placeholder="Enter email*" readonly>
+                        <button class="theme-btn" type="button" (click)="copy(data?.address)">Copy</button>
+                    </div>
+            </div>
+            <div class="text-right mt-3 d-flex">
+                <a class="update mr-2" (click)="paid()">
+                    Have transfered
+                 </a>
+                <a (click)="close()" class="close">
+                    Close
+                </a>
+            </div>
+        </form>
+        <!-- <p><strong>{{data?.address}}</strong></p>
+        <div class="text-right mt-3 d-flex">
+            <a class="update mr-2" >
+                Copy & Proceed to deposit
+             </a>
+            <a (click)="close()" class="close">
+                Close
+            </a>
+        </div> -->
+    </div>
+</div>

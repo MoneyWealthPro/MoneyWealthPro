@@ -5,6 +5,7 @@ import { InvestmentComponent } from './investment/investment.component';
 import { InvestorsEndComponent } from './investors-end.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
+import { WalletComponent } from './wallet/wallet.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: 'investment',
         component: InvestmentComponent
+      },
+      {
+        path: 'wallet',
+        component: WalletComponent
       },
       {
         path: 'profile',

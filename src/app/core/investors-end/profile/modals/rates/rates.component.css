@@ -1,0 +1,40 @@
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #111111;
+    font-family: "Playfair Display", serif;
+}
+p {
+    color: #718096;
+    font-size: 12px;
+    font-family: Karla,sans-serif;
+}
+strong {
+    font-size: 36px;
+    font-weight: 600;
+    color: #000;
+}
+.priority {
+    color: #718096;
+    font-size: 12px;
+    font-family: Karla,sans-serif;
+}
+.modal-body {
+    padding: 20px;
+}
+.inner-list {
+    height: 200px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+.close{
+        display: block;
+        max-width: 150px;
+        line-height: 25px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: red;
+        border: 1px solid red;
+        border-radius: 30px;
+}

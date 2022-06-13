@@ -1,0 +1,13 @@
+<div class="modal-body">
+    <div >
+        <h2>Choose Payment Method</h2>
+        <div class="inner-list">
+            <a (click)="pay(item)" *ngFor="let item of address" class="flex flex-shrink-0 items-center rounded-t rounded-br border px-6 py-4 mb-4"   style="background-color: #fff; border-color: rgb(207, 219, 224); ">
+                <div class="mr-6" style="display: flex; color: rgb(34, 34, 34); margin-right: 5px; width: 25px; height: 25px;">
+                    <img src="{{item?.logo}}" height="40px"  alt=""> 
+                    <strong style="padding-left: 15px; font-size: large; padding-top: 5px;">{{item?.name}}</strong>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
