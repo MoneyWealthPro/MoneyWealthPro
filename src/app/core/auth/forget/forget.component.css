@@ -53,3 +53,8 @@ input {
     background: #FF9C1A;
     border: 1px solid #FF9C1A;
 }
+
+
+.heading-title h2 { 
+    padding-bottom: 0px;
+}

@@ -15,7 +15,9 @@ const routes = {
 
   deposit: "api/v1/user/deposit",
   mydeposits: "api/v1/user/mydeposits",
-  myreferrals: "api/v1/referredList"
+  myreferrals: "api/v1/referredList",
+  my_withdraw: "api/v1/user/my_withdrawals",
+  withdraw: "api/v1/user/withdraw"
 }
 
 @Injectable({
@@ -36,6 +38,12 @@ export class ProfileService extends BaseService<any> {
   }
   myinvestments() {
     return this.sendGet(this.baseUrl(routes?.my_investments));
+  }
+  mywithdrawals() {
+    return this.sendGet(this.baseUrl(routes?.my_withdraw));
+  }
+  withdraw(payload: any) {
+    return this.sendPost(this.baseUrl(routes?.withdraw), payload);
   }
   changePassword(payload: any) {
     return this.sendPost(this.baseUrl(routes?.change_password), payload);

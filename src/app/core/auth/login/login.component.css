@@ -8,6 +8,9 @@
     background-size: cover;
     padding-top: 10px;
 }
+.heading-title h2 { 
+    padding-bottom: 0px;
+}
 .login-link a {
     font-size: 16px;
     font-weight: 700;

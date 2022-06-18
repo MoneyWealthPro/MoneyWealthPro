@@ -8,7 +8,8 @@ const routes = {
   loginWithEmail: "api/v1/loginWithEmail",
   userInformation: "api/v1/loggedInUserDetails",
 
-  get_investments: "api/v1/user/investment/list"
+  get_investments: "api/v1/user/plans",
+  get_latest: "api/v1/user/latestDepositWithdraw"
 }
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,10 @@ export class GlobalService extends BaseService<any> {
   }
 
   // profile endpoints
-
+  getInvestments() {
+    return this.sendGet(this.baseUrl(routes?.get_investments));
+  }
+  getLatest() {
+    return this.sendGet(this.baseUrl(routes?.get_latest));
+  }
 }

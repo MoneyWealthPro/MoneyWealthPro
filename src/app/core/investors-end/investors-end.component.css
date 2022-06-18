@@ -135,3 +135,8 @@
     outline: 0;
     box-shadow: none !important;
 }
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .hide {
+      display: none;
+  }
+}

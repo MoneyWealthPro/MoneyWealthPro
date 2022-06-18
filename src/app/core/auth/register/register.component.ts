@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from 'src/app/services/global.service';
-
+import { NotifierService } from 'angular-notifier';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,7 +11,8 @@ export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private notifierService: NotifierService
   ) { }
 
   ngOnInit(): void {
@@ -26,12 +27,12 @@ export class RegisterComponent implements OnInit {
   }
   // Function to create 
   createAccount() {
-    console.log(this.registerForm.value);
     this.globalService.registerWithEmail(this.registerForm.value).subscribe((res: any) => {
-      console.log('success', res);
+      this.notifierService.notify('success', `${res?.message}`);
       this.registerForm.reset();
     },(err: any) => {
-      console.log('error', err);
+      this.registerForm.reset();
+      this.notifierService.notify('error', 'An issue occured check your details');
     })
   }
 }

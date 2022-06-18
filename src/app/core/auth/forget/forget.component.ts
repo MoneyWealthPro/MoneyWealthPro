@@ -23,6 +23,6 @@ export class ForgetComponent implements OnInit {
   }
   login() {
     console.log(this.forgetForm);
-  }
+  }   
 
 }

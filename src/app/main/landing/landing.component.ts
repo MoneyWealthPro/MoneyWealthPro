@@ -11,6 +11,8 @@ declare var $: any;
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
+  investments_categories: any;
+  latest: any;
 
   constructor(private router: Router, 
     private globalService: GlobalService,
@@ -18,6 +20,22 @@ export class LandingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getInvestments();
+    this.getLatest();
+  }
+   // Get investment rates
+ getInvestments() {
+  this.globalService.getInvestments().subscribe((res: any) => {
+    this.investments_categories = res['data'];  
+  }, (err: any) => {
+  })
+  }
+  // Function to get list of lastest transactions
+  getLatest() {
+    this.globalService.getLatest().subscribe((res: any) => {
+      this.latest = res;  
+    }, (err: any) => {
+    })
   }
 
   // Function 

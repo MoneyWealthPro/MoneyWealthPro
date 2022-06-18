@@ -10,6 +10,8 @@ import { PlansComponent } from './plans/plans.component';
 const routes: Routes = [
   {
     path: '',
+    redirectTo:'/home', 
+    pathMatch: 'full',
     component: LandingComponent   
   },
   {

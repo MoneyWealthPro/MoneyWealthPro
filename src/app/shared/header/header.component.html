@@ -7,15 +7,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="topbar-left">
-                                <li><a href="mailto:moneywealthpro@gmail.com"><span><i class="fa fa-envelope"></i></span> moneywealthpro@gmail.com</a></li>
+                                <li><a href="mailto:moneywealthpro@gmail.com">
+                                    <span><i class="fa fa-envelope"></i></span>
+                                     moneywealthpro@gmail.com
+                                    </a></li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="topbar-right">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <!-- <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li ><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                <li ><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li ><a href="#"><i class="fab fa-instagram"></i></a></li> -->
                                 <ng-container *ngIf="!user_data">
                                     <li><a [routerLink]="'/core/login'"><span><i class="fa fa-user"></i></span> Login </a></li>
                                     <li><a [routerLink]="'/core/register'"><span><i class="fa fa-user"></i></span> Get Started </a></li>
@@ -34,8 +37,8 @@
                 </div>
                 <nav class="main-navbar">
                     <div class="nav-inner">
-                        <a href="index-2.html" class="brand">
-                            <!-- <img src="assets/images/logo.png" alt="img"> -->
+                        <a [routerLink]="'/home'" class="brand">
+                            <img src="../../../assets/images/purple_logo.png" alt="img">
                         </a>
                         <ul class="desktop-menu">
                             <li><a  [routerLink]="'/home'" routerLinkActive="active">Home</a>
@@ -43,7 +46,7 @@
                             <li><a [routerLink]="'/plans'" routerLinkActive="active">Investment Plan</a></li>
                             <li><a [routerLink]="'/about'" routerLinkActive="active">About Us</a></li>
                             <li><a [routerLink]="'/faq'" routerLinkActive="active">Faq</a></li>
-                            <li><a [routerLink]="'/blog'" routerLinkActive="active">blog</a></li>
+                            <!-- <li><a [routerLink]="'/blog'" routerLinkActive="active">blog</a></li> -->
                             <li><a [routerLink]="'/contact'" routerLinkActive="active">Contact</a></li>
                         </ul>
                         <div class="mobile-header">

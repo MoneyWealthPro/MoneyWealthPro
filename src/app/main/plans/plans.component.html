@@ -19,3 +19,97 @@
                 </div>
             </div>
         <!-- Plans section ends -->
+        <!-- pracing section start  -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="heading-title">
+                    <h6><span></span> Asset Classes</h6>
+                    <h2>Our Pre-vetted Investment Opportunities</h2>
+                    <p>It’s your money, choose where you invest it</p>
+                </div>
+                <div class="tab-content" id="pills-tabContent1">
+                    <div class="tab-pane fade show active" id="pills-home1" style="overflow: visible;">
+                        <div class="row">
+                            <div class="col-lg-4" *ngFor="let item of investments_categories">
+                                <div class="pracing-item ">
+                                    <div class="top-left">
+                                        <p>{{item?.interest_rate}}%</p>
+                                    </div>
+                                    <div class="top-area">
+                                        <img src="{{item?.image}}" style="" width="300px" alt="investment image">
+                                        <!-- <img src="assets/images/icon001.svg" alt="img"> -->
+                                        <p>{{item?.title}}</p>
+                                            <small class="risk">
+                                                {{item?.risk_level}}
+                                            </small>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span><i class="fal fa-check"></i></span>
+                                            {{item?.description}}
+                                        </li>
+                                           
+                                    </ul>
+                                    <a href="/core/register" class="theme_btn" style="padding-top: -20px">
+                                        Invest Now  
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- <div class="col-lg-4">
+                                <div class="pracing-item ">
+                                    <div class="top-left">
+                                        <p>5.50%</p>
+                                    </div>
+                                    <div class="top-area">
+                                        <img src="assets/images/icon001.svg" alt="img">
+                                        <p>Agriculture</p>
+                                    </div>
+                                    <ul>
+                                        <li><span><i class="fal fa-check"></i></span>Maximum Deposit 3000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Minimum Deposit 5000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Up to 50 User Available</li>
+                                    </ul>
+                                
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pracing-item active">
+                                    <div class="top-left">
+                                        <p>7.50%</p>
+                                    </div>
+                                    <div class="top-area">
+                                        <img src="assets/images/icon02.svg" alt="img">
+                                        <p>Real Estate</p>
+                                    </div>
+                                    <ul>
+                                        <li><span><i class="fal fa-check"></i></span>Maximum Deposit 7000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Minimum Deposit 9000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Up to 100 User Available</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="pracing-item">
+                                    <div class="top-left">
+                                        <p>8.50%</p>
+                                    </div>
+                                    <div class="top-area">
+                                        <img src="assets/images/icon003.svg" alt="img">
+                                        <p>Cryptocurrencies</p>
+                                    </div>
+                                    <ul>
+                                        <li><span><i class="fal fa-check"></i></span>Maximum Deposit 12000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Minimum Deposit 15000</li>
+                                        <li><span><i class="fal fa-check"></i></span>Up to 120 User Available</li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- pracing section end  -->
+        <!-- Footer section start -->
+        <app-footer></app-footer>
+        <!-- Footer section ends -->

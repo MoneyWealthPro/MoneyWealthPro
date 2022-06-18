@@ -1,28 +1,4 @@
-/* ------------------------------------------------------
-@File: Default Styles
-@Author:Md Wadud Hossain
-@Developed By: Md Wadud Hossain
-@Developer URL: https://coder-wadud.github.io
 
-This file contains the styling for the actual theme, this
-is the file you need to edit to change the look of the
-theme.
-------------------------------------------------------- */
-/* ======================================================
-@Template Name: MoneyPro
-@Author:  Md Wadud Hossain
-@Default Styles
-
-Table of Content: 
-01/ Variables
-02/ Prefix 
-07/ Responsive 
-
-===================================================== */
-/*----------------------------------------------------*/
-/* Fonts */
-/*Color Variables*/
-/* Bottom to Top key frame*/
 @-webkit-keyframes BottomToTop {
   49% {
     -webkit-transform: translateY(-100%);
@@ -1230,8 +1206,9 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
   margin-bottom: 110px;
 }
 .pricing-section .pracing-item ul li {
-  font-size: 18px;
+  /* font-size: 18px; */
   font-weight: 400;
+  line-height: 20px;
   color: #513E75;
   margin-bottom: 15px;
   font-family: "Source Sans Pro", sans-serif;

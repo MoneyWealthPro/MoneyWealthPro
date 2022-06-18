@@ -29,3 +29,20 @@ a {
 .investment-box:hover p {
     color: rgb(117, 63, 246);
 }
+.theme-btn {
+    display: block;
+    max-width: 200px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #FF9C1A;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+.theme-btn:hover, .theme-btn:focus {
+    background: #FF9C1A;
+    border: 1px solid #FF9C1A;
+    color: #fff;
+}

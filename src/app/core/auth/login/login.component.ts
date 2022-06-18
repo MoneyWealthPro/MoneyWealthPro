@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/services/global.service';
-
+import { NotifierService } from 'angular-notifier';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private globalService: GlobalService,
-    private router: Router
+    private router: Router,
+   private notifierService: NotifierService
   ) { }
 
   ngOnInit(): void {
@@ -30,9 +31,11 @@ export class LoginComponent implements OnInit {
     this.globalService.loginWithEmail(this.loginForm.value).subscribe((res: any) => {
       sessionStorage.setItem("user_token", res?.token);
       this.loginForm.reset();
+      this.notifierService.notify('success', `${res?.message}`);
       this.getUseDetails();
     },(err: any) => {
-      console.log('error', err);
+      this.loginForm.reset();
+      this.notifierService.notify('error', 'Check your details');
     })
   }
   // Function to get the details of logged In User

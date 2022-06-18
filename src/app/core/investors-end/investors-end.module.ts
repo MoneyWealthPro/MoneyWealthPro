@@ -22,6 +22,8 @@ import { PaymentOptionsComponent } from './wallet/payment-options/payment-option
 import { ViewWalletModalComponent } from './wallet/view-wallet-modal/view-wallet-modal.component';
 import { InvestModalComponent } from './investment/invest-modal/invest-modal.component';
 import { PointComponent } from './profile/modals/point/point.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
+import { WithdrawModalComponent } from './withdraw/withdraw-modal/withdraw-modal.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { PointComponent } from './profile/modals/point/point.component';
     PaymentOptionsComponent,
     ViewWalletModalComponent,
     InvestModalComponent,
-    PointComponent
+    PointComponent,
+    WithdrawComponent,
+    WithdrawModalComponent
   ],
   imports: [
     CommonModule,
