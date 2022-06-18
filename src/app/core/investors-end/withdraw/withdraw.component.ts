@@ -35,10 +35,11 @@ export class WithdrawComponent implements OnInit {
       })
   }
   // Function to request fund
-  requestFund()  {
+  requestFund() {
     let sideBar = {
       status: true
     }
+    
     this.globalService.modalSidebarClass.next(sideBar);
     const dialogRef = this.dialog.open(WithdrawModalComponent, {
       width: '600px'

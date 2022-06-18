@@ -1,1 +1,29 @@
-<p>withdraw-modal works!</p>
+<div class="modal-body">
+    <div class="text-center">
+        <h2>Withdraw profit</h2>
+    </div>
+    <div class="inner-list password-space">
+        <form class="mt-4" [formGroup]="withdrawForm">
+            <div class="">
+              <input type="number" formControlName="requested_amount"  placeholder="Enter amount*">
+            </div>
+            <div class="">
+                <input type="text" formControlName="token"   placeholder="Enter receiving address*">
+            </div>
+            <div class="">
+                <input type="text" formControlName="withdraw_method"  placeholder="Enter withdraw method*">
+            </div>
+            <div class="">
+                <textarea placeholder="Drop a message for the admin" formControlName="message" ></textarea>
+            </div>
+        </form>
+    </div>
+    <div class="text-right mt-3 d-flex">
+        <a class="update mr-2">
+            Request fund
+        </a>
+        <a  class="close" (click)="close()">
+            Close
+        </a>
+    </div>
+</div>
