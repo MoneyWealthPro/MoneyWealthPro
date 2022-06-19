@@ -33,4 +33,12 @@ export class WithdrawModalComponent implements OnInit {
  close() {
   this.dialog.closeAll();
  }
+  //  Function to request for funds
+  request() {
+    this.profileService.withdraw(this.withdrawForm.value).subscribe((res: any) => {
+      this.withdrawForm.reset();
+      this.dialog.closeAll();
+      },(err: any) => {
+      })
+  }
 }

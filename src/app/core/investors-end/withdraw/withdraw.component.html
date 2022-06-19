@@ -11,9 +11,18 @@
         <div class="col-md-4">
             <a class=" inline-flex flex-col w-full md:w-1/2-2 border
                 p-4 md:odd:mr-2 md:even:ml-2 mb-4">
-                <span class="font-body text-sm text-gray-700">Total withdraw</span>
+                <span class="font-body text-sm text-gray-700">Total approved withdrawal</span>
                 <span class="font-display text-xl font-semibold py-3">
                  <strong> {{total_withdrawal | currency}} </strong>
+                </span>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a class=" inline-flex flex-col w-full md:w-1/2-2 border
+                p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+                <span class="font-body text-sm text-gray-700">Total pending withdrawal</span>
+                <span class="font-display text-xl font-semibold py-3">
+                 <strong> {{pending_withdraw | currency}} </strong>
                 </span>
             </a>
         </div>
@@ -72,7 +81,7 @@
                                 <td *ngIf="item?.withdraw_status" class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                                 <span
                                     class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
-                                    *ngIf="item?.withdraw_status == 'approved'"  >
+                                    *ngIf="item?.withdraw_status == 'approved'">
                                     <span
                                     aria-hidden
                                     class="absolute inset-0 bg-green-200 opacity-50 rounded-full"

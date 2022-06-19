@@ -3,39 +3,35 @@
       <h2 >Dashboard</h2>
     </div>
     <div class="row mb-3">
-        <div class="col-md-4">
-           <div class="p-6 mt-4 max-w-sm mx-auto bg-white rounded-xl flex items-center space-x-4">
-                <div class="shrink-0">
-                    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-                </div>
-                <div>
-                    <div class="text-xl font-medium text-black">ChitChat</div>
-                    <p class="text-slate-500">You have a new message!</p>
-                </div>
-            </div>
+       <div class="col-md-4">
+        <a class=" inline-flex flex-col w-full md:w-1/2-2 border
+            p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+            <span class="font-body text-sm text-gray-700">Total approved withdrawal</span>
+            <span class="font-display text-xl font-semibold py-3">
+             <strong> {{total_withdrawal | currency}} </strong>
+            </span>
+        </a>
         </div>
         <div class="col-md-4">
-             <div class="p-6 mt-4 max-w-sm mx-auto bg-white rounded-xl flex items-center space-x-4">
-                <div class="shrink-0">
-                    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-                </div>
-            <div>
-            <div class="text-xl font-medium text-black">ChitChat</div>
-            <p class="text-slate-500">You have a new message!</p>
-        </div>
-             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="p-6 mt-4 max-w-sm mx-auto bg-white rounded-xl flex items-center space-x-4">
-                <div class="shrink-0">
-                    <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-                </div>
-                <div>
-                    <div class="text-xl font-medium text-black">ChitChat</div>
-                    <p class="text-slate-500">You have a new message!</p>
-                </div>
-            </div>
-        </div>
+          <a class=" inline-flex flex-col w-full md:w-1/2-2 border
+              p-4 md:odd:mr-2 md:even:ml-2 mb-4">
+              <span class="font-body text-sm text-gray-700">Total investment Balance</span>
+              <span class="font-display text-xl font-semibold py-3">
+               <strong> {{total_investment_balance | currency}} </strong>
+              </span>
+          </a>
+      </div>
+      <div class="col-md-4">
+        <a class="inline-flex d-flex flex-col w-full md:w-1/2-2 border
+        p-4 md:odd:mr-2 md:even:ml-2 mb-4" href="/settings/p/point">
+        <span class="font-body text-sm text-gray-700">
+          <strong>Confirmed Deposited Amount </strong> 
+        </span>
+        <span class="font-display text-xl font-semibold py-3">
+           {{total_deposited_amount | currency}}
+        </span>
+       </a>
+    </div>
     </div>
     <!-- <div class="row mt-3">
         <div class="col-md-6">
