@@ -54,10 +54,12 @@ export class DashboardComponent implements OnInit {
   getMyInvesment() {
     this.profileService.myinvestments().subscribe((res: any) => {
       this.investmeted_packages = res['data']; 
+      let counter = 0;
+      console.log('invest', this.investmeted_packages);
       for(let i = 0; i < this.investmeted_packages.length; i++){
-        this.total_investment_balance += this.investmeted_packages[i]?.amount;
+        counter = counter + this.investmeted_packages[i]?.amount;
       }
-      return  this.total_investment_balance;
+      this.total_investment_balance = counter;
     }, (err: any) => {
     })
   }

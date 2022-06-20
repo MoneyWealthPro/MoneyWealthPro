@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   // Function to get the details of logged In User
   getUseDetails() {
     this.globalService.userDetails().subscribe((res: any) => {
-      localStorage.setItem('userdata', JSON.stringify(res?.data));
+      localStorage.setItem("userdata", JSON.stringify(res?.data));
       this.globalService.userData.next(JSON.stringify(res?.data));
       this.router.navigate(['/core/investor/dashboard']);
     }, (err: any) => {

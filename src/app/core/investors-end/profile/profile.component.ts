@@ -7,9 +7,11 @@ import { AStoryComponent } from './modals/a-story/a-story.component';
 import { VerifyEmailComponent } from './modals/verify-email/verify-email.component';
 import { UpdateKycComponent } from './modals/update-kyc/update-kyc.component';
 import { ReferralComponent } from './modals/referral/referral.component';
-import { WithdrawalComponent } from './modals/withdrawal/withdrawal.component';
+// import { WithdrawalComponent } from './modals/withdrawal/withdrawal.component';
 import { ContactUsComponent } from './modals/contact-us/contact-us.component';
 import { PointComponent } from './modals/point/point.component';
+import { WithdrawModalComponent } from '../withdraw/withdraw-modal/withdraw-modal.component';
+import { LogoutModalComponent } from '../../auth/logout-modal/logout-modal.component';
 
 @Component({
   selector: 'app-profile',
@@ -112,7 +114,7 @@ export class ProfileComponent implements OnInit {
       });
     }
     if(modalTitle == 'withdraw') {
-      const dialogRef = this.dialog.open(WithdrawalComponent, {
+      const dialogRef = this.dialog.open(WithdrawModalComponent, {
         width: '600px'
       })
       dialogRef.afterClosed().subscribe(result => {
@@ -136,6 +138,17 @@ export class ProfileComponent implements OnInit {
     if(modalTitle == 'point') {
       const dialogRef = this.dialog.open(PointComponent, {
         width: '600px'
+      })
+      dialogRef.afterClosed().subscribe(result => {
+        let sideBar = {
+          status: false
+        }
+        this.globalService.modalSidebarClass.next(sideBar);
+      });
+    }
+    if(modalTitle == 'logout') {
+      const dialogRef = this.dialog.open(LogoutModalComponent, {
+        width: '300px'
       })
       dialogRef.afterClosed().subscribe(result => {
         let sideBar = {

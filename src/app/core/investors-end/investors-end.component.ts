@@ -17,8 +17,8 @@ export class InvestorsEndComponent implements OnInit {
      this.globalService.modalSidebarClass.subscribe((res: any) => {
          this.sideClass = res;
     })
-    let userdata = localStorage.getItem('userdata');
-   this.user_data = JSON.parse(`${userdata}`);
+    let newObject = window.localStorage.getItem("userdata");
+   this.user_data = JSON.parse(newObject!);
   }
 
     // Function to logut from the system

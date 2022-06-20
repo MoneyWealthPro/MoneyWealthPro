@@ -24,6 +24,52 @@ import { InvestModalComponent } from './investment/invest-modal/invest-modal.com
 import { PointComponent } from './profile/modals/point/point.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { WithdrawModalComponent } from './withdraw/withdraw-modal/withdraw-modal.component';
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
+
+
+/**
+ * Custom angular notifier options
+ */
+ const customNotifierOptions: NotifierOptions = {
+  position: {
+		horizontal: {
+			position: 'right',
+			distance: 12
+		},
+		vertical: {
+			position: 'bottom',
+			distance: 12,
+			gap: 10
+		}
+	},
+  theme: 'material',
+  behaviour: {
+    autoHide: 5000,
+    onClick: 'hide',
+    onMouseover: 'pauseAutoHide',
+    showDismissButton: true,
+    stacking: 4
+  },
+  animations: {
+    enabled: true,
+    show: {
+      preset: 'slide',
+      speed: 300,
+      easing: 'ease'
+    },
+    hide: {
+      preset: 'fade',
+      speed: 300,
+      easing: 'ease',
+      offset: 50
+    },
+    shift: {
+      speed: 300,
+      easing: 'ease'
+    },
+    overlap: 150
+  }
+};
 
 @NgModule({
   declarations: [
@@ -50,6 +96,7 @@ import { WithdrawModalComponent } from './withdraw/withdraw-modal/withdraw-modal
   imports: [
     CommonModule,
     MatDialogModule,
+    NotifierModule.withConfig((customNotifierOptions)),
     FormsModule,
     ReactiveFormsModule,
     InvestorsEndRoutingModule
