@@ -1,6 +1,6 @@
   
 <header class="navbar  sticky-top navbar-bg-light flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-2 py-1" href="/home">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-2 py-1" [routerLink]="'/home'">
       <img src="assets/images/purple_logo.png" width="200px" alt="img">
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
   <div class="container-fluid">
     <div class="row">
        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block side-bg-light sidebar collapse">
-        <a class="brand-logo" href="/home">
+        <a class="brand-logo" [routerLink]="'/home'">
             <span class="fs-4">
               <img src="assets/images/purple_logo.png" width="200px" alt="img">
             </span>
