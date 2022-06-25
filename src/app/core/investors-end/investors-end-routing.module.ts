@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardPanelComponent } from '../admin-end/dashboard-panel/dashboard-panel.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InvestmentComponent } from './investment/investment.component';
 import { InvestorsEndComponent } from './investors-end.component';
@@ -9,14 +10,13 @@ import { WalletComponent } from './wallet/wallet.component';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 
 const routes: Routes = [
-
   {
     path: '',
     component: InvestorsEndComponent,
     children: [
       {
       path: 'dashboard',
-      component: DashboardComponent
+      component: DashboardPanelComponent
       },
       {
         path: 'investment',

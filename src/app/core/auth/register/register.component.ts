@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   // Function to create 
   createAccount() {
     this.globalService.registerWithEmail(this.registerForm.value).subscribe((res: any) => {
-      this.notifierService.notify('success', `${res?.message}`);
+      this.notifierService.notify('success', `${res?.msg}`);
       this.registerForm.reset();
     },(err: any) => {
       this.registerForm.reset();

@@ -40,13 +40,14 @@ input {
 }
 .theme-btn {
     display: block;
-    max-width: 200px;
+    max-width: 200px !important;
+    width: 200px !important;
     line-height: 50px;
     text-align: center;
     font-size: 16px;
     font-weight: 400;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #fff; 
     border-radius: 30px;
 }
 .theme-btn:hover,.theme-btn:focus {

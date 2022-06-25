@@ -37,9 +37,9 @@
                     </div>
                 </form>
                 <div class="left-content">
-                    <a  class="theme-btn" (click)="login()">
+                    <button  class="theme-btn" [disabled]="!forgetForm.valid" (click)="login()">
                       Forgot password
-                    </a>
+                    </button>
                 </div>
                 <div class="mt-4 media-bod text-center">
                     <p class="text-white">
@@ -61,3 +61,4 @@
         </div>
     </div>
 </div>
+<notifier-container></notifier-container>

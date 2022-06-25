@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminEndComponent } from './admin-end.component';
 import { DashboardPanelComponent } from './dashboard-panel/dashboard-panel.component';
 
 const routes: Routes = [
   {
-    path: 'dashboard',
-    component: DashboardPanelComponent
+    path: '',
+    component: AdminEndComponent,
+    children: [
+      {
+      path: 'dashboard',
+      component: DashboardPanelComponent
+      },
+    ]
   }
 ];
 
