@@ -37,7 +37,7 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
 			distance: 12
 		},
 		vertical: {
-			position: 'bottom',
+			position: 'top',
 			distance: 12,
 			gap: 10
 		}

@@ -1,12 +1,17 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
       <h2 >Dashboard</h2>
+      <div class="form-wraper float-right">
+        <p class="mr-3 hide"><strong class="hide">Share referral link</strong></p>
+        <input type="email" value="{{hostname}}" placeholder="Enter email*" readonly>
+        <button class="theme-btn" (click)="copy(hostname)" type="button">Copy</button>
+      </div>
     </div>
     <div class="row mb-3">
        <div class="col-md-4">
         <a class=" inline-flex flex-col w-full md:w-1/2-2 border
             p-4 md:odd:mr-2 md:even:ml-2 mb-4">
-            <span class="font-body text-sm text-gray-700">Total approved withdrawal</span>
+            <span class="font-body text-sm text-gray-700"><strong>Total approved withdrawal </strong></span>
             <span class="font-display text-xl font-semibold py-3">
              <strong> {{total_withdrawal | currency}} </strong>
             </span>
@@ -15,7 +20,7 @@
         <div class="col-md-4">
           <a class=" inline-flex flex-col w-full md:w-1/2-2 border
               p-4 md:odd:mr-2 md:even:ml-2 mb-4">
-              <span class="font-body text-sm text-gray-700">Total investment</span>
+              <span class="font-body text-sm text-gray-700">  <strong>Total investment</strong></span>
               <span class="font-display text-xl font-semibold py-3">
                <strong> {{total_investment_balance | currency}} </strong>
               </span>
@@ -149,3 +154,4 @@
         </div>
     </div>
 </main>
+<notifier-container></notifier-container>

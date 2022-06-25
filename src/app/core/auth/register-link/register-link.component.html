@@ -1,0 +1,69 @@
+<div class="about-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="left-content">
+                    <div class="py-2">
+                        <a [routerLink]="'/home'">
+                            <img src="../../../../assets/images/white_logo.png" class="logo" alt="img">
+                        </a>
+                    </div>
+                    <div class="heading-title">
+                        <h6><span></span></h6>
+                        <h2>Get your
+                            money working</h2>
+                            <p>Invest securely and confidently on the go. Grow your money confidently by investing in pre-vetted investment opportunities.</p></div>
+                    <div class="media">
+                        <div class="images">
+                            <img src="assets/images/icon2.svg" alt="img">
+                        </div>
+                        <div class="media-body">
+                            <h3>Your security is our priority</h3>
+                            <p class="">
+                                MoneyWealthPro uses the highest level of Internet Security and 
+                                it is secured by 256 bits SSL security encryption to ensure that
+                                your information is
+                                comepletely protected from fraud.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form class="mt-4" [formGroup]="registerForm">
+                    <div class="">
+                        <input type="text" formControlName="name" placeholder="Enter name*">
+                    </div>
+                    <div class="">
+                      <input type="email" formControlName="email" placeholder="Enter your email*">
+                    </div>
+                    <div class="">
+                        <input type="password" formControlName="password" placeholder="Enter password*">
+                    </div>
+                </form>
+                <div class="left-content" >
+                    <button  class="theme-btn" [disabled]="!registerForm.valid" (click)="createAccount()">
+                       Create an account
+                    </button>
+                </div>
+                <div class="mt-4 media-bod text-center">
+                    <p class="text-white">
+                       <small> You have an account already? </small> 
+                       <span class="login-link"><a [routerLink]="'/core/login'">Login</a>
+                     </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-section">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="bottom-left">
+                    <span>Copyright &copy; <a href="#">MoneyWealthPro</a> 2022. All rights reserved</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<notifier-container></notifier-container>

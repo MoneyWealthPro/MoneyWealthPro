@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { NotifierService } from 'angular-notifier';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -19,13 +20,19 @@ export class DashboardComponent implements OnInit {
   total_pending_deposited_amount: any;
   total_deposited_amount: any;
   total_unconfirmed_deposited_amount: any;
-
+  hostname: any;
+user: any;
   constructor(
     private profileService: ProfileService, 
-    private dialog: MatDialog
-  ) { }
+    private dialog: MatDialog,
+    private notifierService: NotifierService
+  ) {
+    this.user =  localStorage.getItem("userdata");
+    this.hostname = window.location.host +''+'/core/register' +'/'+ JSON.parse(this.user)?.["referral_code"];
+   }
 
   ngOnInit(): void {
+   
     this.getReferredUsersList();
     this.getMyWithdraw();
     this.getMyInvesment();
@@ -78,4 +85,20 @@ export class DashboardComponent implements OnInit {
     }, (err: any) => {
     })
   }
+    // Function to copy wallet
+    copy(val: any) {
+      const selBox = document.createElement('textarea');
+      selBox.style.position = 'fixed';
+      selBox.style.left = '0';
+      selBox.style.top = '0';
+      selBox.style.opacity = '0';
+      selBox.value = val;
+      document.body.appendChild(selBox);
+      selBox.focus();
+      selBox.select();
+      document.execCommand('copy');
+      document.body.removeChild(selBox);
+      // After success copy
+      this.notifierService.notify('success', 'Referral link copied successfully');
+    }
 }

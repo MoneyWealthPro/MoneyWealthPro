@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RatesComponent } from './investors-end/profile/modals/rates/rates.component';
 import { LogoutModalComponent } from './auth/logout-modal/logout-modal.component';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { RegisterLinkComponent } from './auth/register-link/register-link.component';
 
 
 /**
@@ -61,7 +62,8 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
     LoginComponent,
     ForgetComponent,
     RatesComponent,
-    LogoutModalComponent
+    LogoutModalComponent,
+    RegisterLinkComponent
   ],
   imports: [
     CommonModule,

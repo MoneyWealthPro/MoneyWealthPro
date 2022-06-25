@@ -16,7 +16,7 @@ const routes: Routes = [
     children: [
       {
       path: 'dashboard',
-      component: DashboardPanelComponent
+      component: DashboardComponent
       },
       {
         path: 'investment',

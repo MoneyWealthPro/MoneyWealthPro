@@ -7,7 +7,7 @@ const routes = {
   registerWithEmail: 'api/v1/registerWithEmail',
   loginWithEmail: "api/v1/loginWithEmail",
   userInformation: "api/v1/loggedInUserDetails",
-
+  registerWithCode: "ap1/v1/registerWithReferral",
   get_investments: "api/v1/user/plans",
   get_latest: "api/v1/user/latestDepositWithdraw"
 }
@@ -29,6 +29,10 @@ export class GlobalService extends BaseService<any> {
   // register with email
   registerWithEmail(payload: any) {
     return this.sendPost(this.baseUrl(routes?.registerWithEmail), payload);
+  }
+  // register with referral code
+  registerWithCode(payload: any) {
+    return this.sendPost(this.baseUrl(routes?.registerWithCode), payload);
   }
   // register with email
   loginWithEmail(payload: any) {
