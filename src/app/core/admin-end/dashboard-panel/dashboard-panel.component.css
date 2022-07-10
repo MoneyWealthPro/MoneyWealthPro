@@ -9,3 +9,63 @@ p {
     color: #718096;
     font-family: Karla,sans-serif;
 }
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #111111;
+    line-height: 54px;
+    font-family: "Playfair Display", serif;
+}
+a {
+    background-color: #fff;
+}
+.refer {
+    width: 30%;
+    overflow: hidden;
+    height: 40px;
+    font-weight: 400;
+    border: 1px solid #dee2e6;
+    font-family: "Source Sans Pro", sans-serif;
+    outline: none;
+}
+.theme-btn {
+    border-radius: 30px;
+    background: #FF9C1A;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.form-wraper {
+    display: flex;
+}
+.mr-3 {
+    margin-right: 10px;
+}
+.form-wraper input {
+    border:  1px solid #dee2e6;
+    box-shadow: none;
+    outline: none;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    color: #9087A1;
+    height: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.input_box {
+    max-width: 100% !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+.hide{
+    display: none;
+ }
+}
