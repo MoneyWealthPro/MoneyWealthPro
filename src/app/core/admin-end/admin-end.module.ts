@@ -8,6 +8,8 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { InvestmentManagementComponent } from './investment-management/investment-management.component';
 import { DepositManagementComponent } from './deposit-management/deposit-management.component';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
+import { SystemSettingsComponent } from './system-settings/system-settings.component';
+import { WithdrawComponent } from './withdraw/withdraw.component';
 
 /**
  * Custom angular notifier options
@@ -59,7 +61,9 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
     AdminEndComponent,
     UserManagementComponent,
     InvestmentManagementComponent,
-    DepositManagementComponent
+    DepositManagementComponent,
+    SystemSettingsComponent,
+    WithdrawComponent
   ],
   imports: [
     CommonModule,

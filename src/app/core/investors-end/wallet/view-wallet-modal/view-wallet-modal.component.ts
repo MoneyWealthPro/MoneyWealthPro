@@ -1,6 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NotifierService } from 'angular-notifier';
+import { GlobalService } from 'src/app/services/global.service';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -15,7 +17,8 @@ export class ViewWalletModalComponent implements OnInit {
     private dialog: MatDialog,
     public dialogRef: MatDialogRef<ViewWalletModalComponent>,
       @Inject(MAT_DIALOG_DATA) public data: any,
-      private profileService: ProfileService
+      private profileService: ProfileService,
+      private notifierService: NotifierService
     ) { }
 
   ngOnInit(): void {
@@ -45,6 +48,7 @@ export class ViewWalletModalComponent implements OnInit {
     document.execCommand('copy');
     document.body.removeChild(selBox);
     // After success copy
+    this.notifierService.notify('success', 'Referral link copied successfully');
   }
   // Function to paid 
   paid() {

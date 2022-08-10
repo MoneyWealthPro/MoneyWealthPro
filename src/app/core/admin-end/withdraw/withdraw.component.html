@@ -1,11 +1,11 @@
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-        <h2>User Management</h2>
+        <h2 >Withdrawal Management</h2>
       </div>
       <div class="row">
         <div class="col-md-12">
-            <div class="" *ngIf="users?.length != 0">
-                <div class="py-2">
+            <div class="" *ngIf="withdrawals?.length != 0">
+                <div class="">
                   <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                     <div
                       class="inline-block min-w-full shadow-md  rounded-lg overflow-hidden">
@@ -13,17 +13,17 @@
                         <thead>
                           <tr>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                             Username
+                              Amount
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                              Email
+                            Message
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                              Name
+                              Status
                             </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
-                              User role
-                            </th>
+                                Withdrawal method
+                              </th>
                             <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">
                               Date
                             </th>
@@ -33,25 +33,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let item of users">
+                          <tr *ngFor="let item of withdrawals">
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                              <div class="flex">
-                                <div class="">
-                                  <p class="text-gray-900 whitespace-no-wrap">
-                                    {{item?.username}}
-                                  </p>
-                                </div>
-                              </div>
+                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.requested_amount | currency}}</p>
                             </td>
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.email}}</p>
+                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.message}}</p>
                             </td>
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.name}}</p>
+                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.withdraw_status}}</p>
                             </td>
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                              <p class="text-gray-900 whitespace-no-wrap"> {{item?.role}}</p>
-                            </td>
+                                <p class="text-gray-900 whitespace-no-wrap"> {{item?.withdraw_method}}</p>
+                              </td>
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
                               <span
                                 class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight"
@@ -60,20 +54,14 @@
                                   aria-hidden
                                   class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                                 ></span>
-                                <span class="relative"> {{item?.created_dt | date}}</span>
+                                <span class="relative"> {{item?.created_at | date}}</span>
                               </span>
                             </td>
                             <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                                      <button class="btn btn-outline-success btn-sm">
-                                        User referrals
-                                      </button>
-                                      <button (click)="assignModerator(item)" class="btn btn-outline-warning btn-sm">
-                                        Assign moderator
-                                      </button>
-                                      <button class="btn btn-outline-danger btn-sm">
-                                        delete
-                                      </button>
-                            </td>
+                                    <button (click)="approve(item)" type="button" class="btn btn-outline-success">Approved</button>
+                                    <button (click)="decline(item)" type="button" class="btn btn-outline-warning">Decline</button>
+                                    <!-- <button (click)="delete(item)" type="button" class="btn btn-outline-danger">Delete</button> -->
+                                  </td>
                           </tr>
                         </tbody>
                       </table>
@@ -81,12 +69,11 @@
                   </div>
                 </div>
             </div>
-            <div class=" card text-center" *ngIf="users?.length === 0">
-                <h2>No referral yet!</h2>    
+            <div class=" card text-center" *ngIf="withdrawals?.length === 0">
+                <h2>No withdrawals yet!</h2>    
             </div>
         </div>
     </div>
 </main>
-
 
 <notifier-container></notifier-container>
