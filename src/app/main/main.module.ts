@@ -9,6 +9,8 @@ import { FaqComponent } from './faq/faq.component';
 import { BlogComponent } from './blog/blog.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlansComponent } from './plans/plans.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { PlansComponent } from './plans/plans.component';
     ContactComponent,
     FaqComponent,
     BlogComponent,
-    PlansComponent
+    PlansComponent,
+    TermsComponent,
+    PrivacyComponent
   ],
   imports: [
     CommonModule,

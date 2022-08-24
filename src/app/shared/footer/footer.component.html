@@ -21,8 +21,8 @@
                     <h3>Useful Link</h3>
                     <ul>
                        
-                        <li><a href="/"><i class="fal fa-angle-right"></i>Terms & condition</a></li>
-                        <li><a href="/"><i class="fal fa-angle-right"></i>Privacy & Policy</a></li>
+                        <li><a href="/terms"><i class="fal fa-angle-right"></i>Terms & condition</a></li>
+                        <li><a href="/privacy"><i class="fal fa-angle-right"></i>Privacy & Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,9 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="footer-item footer-gallery">
                     <h3>Newsletter</h3>
-                    <form>
-                        <input type="email" placeholder="Enter your email*">
-                        <button type="submit" class="theme_btn">Subscribe <i class="fa fa-paper-plane"></i></button>
+                    <form [formGroup]="subcribeForm">
+                        <input type="email" formControlName="email" placeholder="Enter your email*">
+                        <button type="submit" (click)="submit()" class="theme_btn">Subscribe <i class="fa fa-paper-plane"></i></button>
                     </form>
                 </div>
             </div>
