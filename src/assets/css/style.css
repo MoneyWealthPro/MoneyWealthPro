@@ -1731,7 +1731,7 @@ body a:focus, body a:hover, body .btn:focus, body .btn:hover, body button:focus,
 }
 .faq-section .images-side {
   text-align: right;
-  margin-right: -150px;
+  /* margin-right: -150px; */
 }
 .faq-section .images-side img {
   max-width: 100%;
