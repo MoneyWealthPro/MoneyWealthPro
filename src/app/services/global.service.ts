@@ -10,7 +10,7 @@ const routes = {
   registerWithCode: "ap1/v1/registerWithReferral",
   get_investments: "api/v1/user/plans",
   get_latest: "api/v1/user/latestDepositWithdraw",
-  subcribe:  "api/v1/user/"
+  subcribe:  "api/v1/user/subcribe"
 }
 @Injectable({
   providedIn: 'root'
