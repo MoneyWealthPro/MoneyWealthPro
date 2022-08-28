@@ -10,7 +10,8 @@ const routes = {
   registerWithCode: "ap1/v1/registerWithReferral",
   get_investments: "api/v1/user/plans",
   get_latest: "api/v1/user/latestDepositWithdraw",
-  subcribe:  "api/v1/user/subcribe"
+  subcribe:  "api/v1/user/subcribe",
+  contact: "api/v1/user/contact"
 }
 @Injectable({
   providedIn: 'root'
@@ -54,5 +55,8 @@ export class GlobalService extends BaseService<any> {
   // subcribe
   subcribe(payload: any) {
     return this.sendPost(this.baseUrl(routes?.subcribe), payload);
+  }
+  contact(payload: any) {
+    return this.sendPost(this.baseUrl(routes?.contact), payload);
   }
 }

@@ -26,11 +26,11 @@
                     <div class="col-lg-6">
                         <div class="post-comment">
                             <h2 class="title form_title">Contact With Us</h2>
-                            <form class="post_from">
-                                <input type="text" placeholder="Name...">
-                                <input type="email" placeholder="Email...">
-                                <textarea placeholder="Comment..."></textarea>
-                                <button class="theme_btn">Send message</button>
+                            <form class="post_from" [formGroup]="contactForm" >
+                                <input type="text" formControlName="" placeholder="Name...">
+                                <input type="email" formControlName=""  placeholder="Email...">
+                                <textarea formControlName=""  placeholder="Comment..."></textarea>
+                                <button (click)="submit()" class="theme_btn">Send message</button>
                             </form>
                         </div>
                     </div>
@@ -48,3 +48,4 @@
         <!-- Footer section start -->
            <app-footer></app-footer>
         <!-- Footer section ends -->
+        <notifier-container></notifier-container>
