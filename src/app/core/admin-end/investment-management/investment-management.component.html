@@ -60,8 +60,8 @@
                             </span>
                           </td>
                           <td class="px-5 py-2 border-b border-gray-200 bg-white text-sm">
-                                  <button type="button" class="btn btn-outline-success">Approved</button>
-                                  <button type="button" class="btn btn-outline-danger">Unapproved</button>
+                                  <button type="button" class="btn btn-outline-success" (click)="approve(item)">Approved</button>
+                                  <button type="button" class="btn btn-outline-danger" (click)="unapprove(item)">Unapproved</button>
                           </td>
                         </tr>
                       </tbody>

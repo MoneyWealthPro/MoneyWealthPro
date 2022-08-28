@@ -17,5 +17,8 @@ export class InvestmentManagementComponent implements OnInit {
       console.log('investments', this.investments);
     })
   }
-
+  approve(item: any) {
+  }
+  unapprove(item: any) {
+  }
 }

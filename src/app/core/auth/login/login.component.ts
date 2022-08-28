@@ -45,6 +45,8 @@ export class LoginComponent implements OnInit {
       this.globalService.userData.next(JSON.stringify(res?.data));
       if(res?.data?.role === 'user') {
       this.router.navigate(['/core/investor/dashboard']);
+      } else if(res?.data?.role === 'moderator') {
+        this.router.navigate(['/core/investor/dashboard']);
       } else {
         this.router.navigate(['/core/admin/dashboard']);
       }
