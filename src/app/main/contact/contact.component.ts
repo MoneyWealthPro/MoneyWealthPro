@@ -33,9 +33,9 @@ export class ContactComponent implements OnInit {
   submit() {
     this.globalService.contact(this.contactForm.value).subscribe((res: any) => {
       this.contactForm.reset();
-      this.notifierService.notify('success', `${res?.message}`);
+      this.notifierService.notify('success', `${res?.msg}`);
     },(err: any) => {
-      this.notifierService.notify('error', err?.message);
+      this.notifierService.notify('error', err?.error_msg);
     })
   }
 }
